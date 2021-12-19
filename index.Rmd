@@ -1,0 +1,102 @@
+---
+title: "Открытие новых активных ядер галактик телескопом АРТ-ХС им. Павлинского и их исследование по данным СРГ/еРОЗИТА, Саянского 1.6 м телескопа и Российско-турецкого 1.5 м телескопа"
+subtitle: "Астрофизика высоких энергий сегодня и завтра 2021 (HEA-2021)"
+author: '<u>Усков Г.С.</u>, Зазнобин И.А., Сазонов С.Ю., Семена А.Н., Гильфанов М.Р., Буренин Р.А., Еселевич М.В., Кривонос Р.А., Ляпин А.Р., Медведев П.С., Хорунжев Г.А., Сюняев Р.А. <a href="mailto:uskov@cosmos.ru"> uskov@cosmos.ru</a>'
+date: 16/04/2021
+output:
+  xaringan::moon_reader:
+    css: ["default", "css/my-theme.css", "css/my-fonts.css"]
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(here)
+library(data.table)
+# xaringanExtra::use_fit_screen()
+
+```
+
+
+# BPT-диаграмма
+
+
+.pull-right[
+```{r, echo=F, out.width="80%", fig.cap="Расположение исследуемых АЯГ на BPT-диаграмме (Балдвин и др., 1981). На графике представлены доверительные интервалы отношений потоков. Стрелкой указаны нижние 2-  $\\sigma$ пределы."}
+
+p_bpt <- readRDS('bpt.Rds') 
+
+p_bpt + 
+  # labs(title = 'BPT-диаграмма') + 
+  theme(legend.text = element_text(family = 'Times', size = 14),
+        legend.position = c(0.25, 0.9))
+```
+]
+
+---
+
+# Nh vs $\Gamma$
+
+.pull-left[
+```{r}
+```
+
+
+]
+
+.pull-right[
+```{r, out.width="80%", fig.cap="Зависимость наклона рентгеновского степенного континуума от внутренней колонки поглощения для 8 АЯГ, исследованных по данным телескопов ART-XC и eROSITA. Стрелками показаны 90% верхние пределы."}
+p_nh_gamma <- readRDS('nh_vs_gamma.Rds')
+p_nh_gamma +
+  theme(text = element_text(family = 'Times', size = 24),
+        legend.text = element_text(family = 'Times', size = 16),
+        axis.text = element_text(family = 'Times', size = 24),
+        axis.ticks = element_line(size=1))
+```
+]
+
+---
+
+# tmp
+
+```{r}
+# source('../scripts/table-xray.R')
+# options(knitr.kable.NA = '$-$')
+# df_x <- data.table::fread('../resources/xray_pars_flux_4_12_without1.3.csv') %>% 
+#   as_tibble() %>% 
+#   filter(Name != "SRGAJ004506.7+620747") %>% 
+#   mutate(AIC = paste0("$", round(2*dof + cstat, 1), "$")) %>% 
+#   mutate(across(starts_with('nH'), ~.x*10)) %>% 
+#   mutate(across(starts_with('flux'), ~10^(.x))) %>% 
+#   mutate(Cstat = paste0('$', round(cstat, 0), '$ ($', dof, '$)'))
+# df_x %>%
+#   mutate(across(starts_with('flux'), ~.x*1e12)) %>% 
+#   mutate(Flux = pretty_format_xray(best=flux, min=flux_lo, max=flux_up, param_name = 'flux', par = list(flux=c(1,F)))) %>% 
+#   mutate(PhoIndex = xrayr::latex_range(min = pho_ind_lo, 
+#                                        best = pho_ind, 
+#                                        max = pho_ind_up, ndigits = 1)) %>% 
+#   mutate(NH = pretty_format_xray(nH_lo, nH, nH_up, param_name = 'nh', par = list(nh = c(1,F)))) %>% 
+#   mutate(across(starts_with('bb'), ~.x*1e6)) %>% 
+#   mutate(A_bb = ifelse(is.na(bb_norm), NA, pretty_format_xray(bb_norm_lo, bb_norm, bb_norm_up, 'bb', list(bb=c(1,F))))) %>% 
+#   select(Model, Name, NH, PhoIndex, Flux, A_bb, Cstat, AIC) %>% 
+#   select(Model, Name, NH, PhoIndex, Cstat) %>% 
+#   knitr::kable(format = 'html') #%>% 
+  # kableExtra::kable_paper(full_width = F) %>% 
+  # kableExtra::collapse_rows(columns = 1)
+
+
+```
+
+```{r}
+tribble(~x,
+        "$<0.2$ ") %>% 
+  knitr::kable(format = 'html', escape = FALSE)
+```
+
