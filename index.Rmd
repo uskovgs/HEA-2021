@@ -1,8 +1,7 @@
 ---
-title: "Открытие новых активных ядер галактик телескопом АРТ-ХС им. Павлинского и их исследование по данным СРГ/еРОЗИТА, Саянского 1.6 м телескопа и Российско-турецкого 1.5 м телескопа"
+title: "Открытие новых активных ядер галактик телескопом ART-XC им. Павлинского и их исследование по данным СРГ/еРОЗИТА, Саянского 1.6 м телескопа и Российско-турецкого 1.5 м телескопа"
 subtitle: "Астрофизика высоких энергий сегодня и завтра 2021 (HEA-2021)"
-author: '<u>Усков Г.С.</u>, Зазнобин И.А., Сазонов С.Ю., Семена А.Н., Гильфанов М.Р., Буренин Р.А., Еселевич М.В., Кривонос Р.А., Ляпин А.Р., Медведев П.С., Хорунжев Г.А., Сюняев Р.А. <a href="mailto:uskov@cosmos.ru"> uskov@cosmos.ru</a>'
-date: 16/04/2021
+author: '<u>Усков Г.С.</u>, Зазнобин И.А., Сазонов С.Ю., Семена А.Н., Гильфанов М.Р., Буренин Р.А., Еселевич М.В., Кривонос Р.А., Ляпин А.Р., Медведев П.С., Хорунжев Г.А., Сюняев Р.А.<br> <a href="mailto:uskov@cosmos.ru"> uskov@cosmos.ru</a> <br><br><br> <small> Работа принята к печати в ПАЖ и проводилась при поддержке гранта РНФ 19-12-00396 </small>'
 output:
   xaringan::moon_reader:
     css: ["default", "css/my-theme.css", "css/my-fonts.css"]
@@ -25,7 +24,259 @@ library(data.table)
 ```
 
 
-# BPT-диаграмма
+
+
+# Выборка объектов. 1
+
+.pull-left[
+
+* Из каталога источников годового обзора ART-XC им. Павлинского 12 декабря 2019 -- 15 декабря 2020 (Павлинский и др. 2021)
+
+* S/N > 4.82 для 4—12 кэВ
+
+* 867 всего, 116 открытых ART-XC, ожидается ~ 80 ложных
+
+* Была произведена корреляци с:
+    * другими рентгеновскими каталоги
+    * предварительным каталогом источников eROSITA на (0 < | $l$ | < 180 $^o$) в ходе первых трех обзоров всего неба
+    * каталогами в ИК, оптическом и радио диапазонах
+]
+
+---
+
+# Выборка объектов. 2
+
+.pull-left[
+
+цель создать полную выборку по АЯГ КП и др
+
+отбирались для оптической программы новые рентгенвоские источники и ранее изветстные которые не были классифицированы
+
+
+не всего отобрано а только для этой статьи
+
+* Всего было отобрано 17 источников:
+    * 9 на северном небе ( $\delta>-20^o$ )
+    * 8 на южном небе
+    
+* Для 8 источников северного неба мы построили рентгеновские спектры по данным eROSITA и ART-XC в диапазоне 0.2—20 кэВ
+
+]
+
+--
+
+.pull-right[
+
+Отождествление активных ядер галактик
+
+```{r,  fig.align="center"}
+knitr::include_graphics("images/paper_zaznobin21_agn.png")
+```
+
+
+Новые катаклизмические переменные
+
+```{r}
+knitr::include_graphics("images/paper_zaznobin21_cv.png")
+```
+]
+
+---
+
+class: center
+
+# Выборка объектов. 3
+
+
+
+```{r, out.width="80%"}
+knitr::include_graphics("images/table_main.png")
+```
+
+
+```{r, out.width="80%"}
+knitr::include_graphics("images/table_main_6df.png")
+```
+
+---
+
+# Оптические наблюдения
+
+.pull-left[
+
+* Оптическая поддержка:
+    * АЗТ-33ИК, ИСЗФ СО РАН. АДАМ (САО РАН, Афанасьев и др. 2016)
+    * РТТ-150, обсерватория ТУБИТАК. TFOSC
+    
+* Наблюдатели:
+    * Игорь Зазнобин
+    * Александр Ляпин
+    * Георгий Хорунжев
+
+* Журнал оптических наблюдений:
+
+```{r}
+knitr::include_graphics('images/optical_obs.png')
+```
+
+]
+
+
+
+.pull-right[
+
+```{r, out.width = "160px", fig.align="center", fig.show='hold'}
+knitr::include_graphics(c('images/azt33ik.png', 'images/rtt150.jpg'))
+```
+
+Сверху: АЗТ-33ИК; снизу: РТТ-150
+]
+---
+
+# SRGA J025234.3+431004 Sy2
+
+рассказать про рентгеновские спектры, доп компоненту
+
+.pull-left[
+
+```{r}
+knitr::include_graphics("images/j0252_img.png")
+```
+
+]
+
+.pull-right[
+
+```{r}
+magick::image_read_pdf("images/j0252_spec.pdf")
+```
+]
+
+---
+
+# SRGA J025234.3+431004 Sy2
+
+рассказать про рентгеновские спектры, доп компоненту
+
+.pull-left[
+
+```{r}
+knitr::include_graphics("images/j0252_img.png")
+```
+
+]
+
+.pull-right[
+
+```{r}
+magick::image_read_pdf("images/j0252_spec_xray.pdf")
+```
+]
+
+
+---
+
+# SRGA J221913.2+362014 Sy2
+
+.pull-left[
+
+```{r}
+knitr::include_graphics("images/j2219_img.png")
+```
+
+]
+
+.pull-right[
+
+```{r, fig.show='hold', fig.cap="G,R", fig.align='center', out.width="300px"}
+knitr::include_graphics(c("images/j2219G_spec.png", "images/j2219R_spec.png"))
+```
+]
+
+---
+
+# SRGA J221913.2+362014 Sy2
+
+.pull-left[
+```{r}
+knitr::include_graphics("images/j2219_img.png")
+```
+]
+
+.pull-right[
+```{r}
+magick::image_read_pdf("images/j2219_spec_xray.pdf")
+```
+]
+
+---
+
+# SRGA J235250.6-170449 Sy1
+
+.pull-left[
+
+
+```{r}
+knitr::include_graphics("images/j2352_img.png")
+```
+
+
+
+]
+
+.pull-right[
+
+```{r}
+magick::image_read_pdf("images/j2352_spec.pdf")
+```
+
+]
+
+---
+
+# SRGA J235250.6-170449 Sy1
+
+.pull-left[
+
+
+```{r}
+knitr::include_graphics("images/j2352_img.png")
+```
+
+
+
+]
+
+.pull-right[
+
+
+```{r}
+magick::image_read_pdf("images/j2352_spec_xray.pdf")
+```
+
+]
+
+---
+
+# Свойства активных ядер галактик
+
+.pull-left[
+
+Спектры получены на АЗТ-33ИК и РТТ-150
+
+```{r, out.height="80%"}
+knitr::include_graphics("images/optical_params.png")
+```
+
+Спектры из обзора 6dF
+
+```{r, out.height="80%"}
+knitr::include_graphics("images/optical_params_6df.png")
+```
+
+
+
+]
 
 
 .pull-right[
@@ -42,10 +293,11 @@ p_bpt +
 
 ---
 
-# Nh vs $\Gamma$
+# Рентгеновские свойства
 
 .pull-left[
 ```{r}
+knitr::include_graphics("images/xray_params.png")
 ```
 
 
@@ -64,39 +316,39 @@ p_nh_gamma +
 
 ---
 
-# tmp
 
-```{r}
-# source('../scripts/table-xray.R')
-# options(knitr.kable.NA = '$-$')
-# df_x <- data.table::fread('../resources/xray_pars_flux_4_12_without1.3.csv') %>% 
-#   as_tibble() %>% 
-#   filter(Name != "SRGAJ004506.7+620747") %>% 
-#   mutate(AIC = paste0("$", round(2*dof + cstat, 1), "$")) %>% 
-#   mutate(across(starts_with('nH'), ~.x*10)) %>% 
-#   mutate(across(starts_with('flux'), ~10^(.x))) %>% 
-#   mutate(Cstat = paste0('$', round(cstat, 0), '$ ($', dof, '$)'))
-# df_x %>%
-#   mutate(across(starts_with('flux'), ~.x*1e12)) %>% 
-#   mutate(Flux = pretty_format_xray(best=flux, min=flux_lo, max=flux_up, param_name = 'flux', par = list(flux=c(1,F)))) %>% 
-#   mutate(PhoIndex = xrayr::latex_range(min = pho_ind_lo, 
-#                                        best = pho_ind, 
-#                                        max = pho_ind_up, ndigits = 1)) %>% 
-#   mutate(NH = pretty_format_xray(nH_lo, nH, nH_up, param_name = 'nh', par = list(nh = c(1,F)))) %>% 
-#   mutate(across(starts_with('bb'), ~.x*1e6)) %>% 
-#   mutate(A_bb = ifelse(is.na(bb_norm), NA, pretty_format_xray(bb_norm_lo, bb_norm, bb_norm_up, 'bb', list(bb=c(1,F))))) %>% 
-#   select(Model, Name, NH, PhoIndex, Flux, A_bb, Cstat, AIC) %>% 
-#   select(Model, Name, NH, PhoIndex, Cstat) %>% 
-#   knitr::kable(format = 'html') #%>% 
-  # kableExtra::kable_paper(full_width = F) %>% 
-  # kableExtra::collapse_rows(columns = 1)
+# Заключение
+
+сказать здесь или раньше согласуются друг с другом еро и арт
+
+послежним пунктом - всего за послежний год с помощью оптических наюлюдений было отождествлено n аяг и столько то переменных + работа транзиентов артовских
+
+сильнопоглощенный источник показать nuFnu примерно такая форма на тех слайдах
+
+Можно упосмянуть что один из объектов его видно по самым послежним данным глубого обхора обсерваотррии ИНТЕГРАЛ в поле М81. Наблюдения проводятся с 19 года, руководитель Мереминский ИНТЕГРАЛ ИБИС
 
 
-```
 
-```{r}
-tribble(~x,
-        "$<0.2$ ") %>% 
-  knitr::kable(format = 'html', escape = FALSE)
-```
+* Нам удалось отождествить 17 АЯГ с помощью оптических наблюдений на АЗТ-33ИК и РТТ-150 и архивных данным 6dF
+
+* Все они близкие сейфертовские галатики (8 Sy1, 2 Sy 1.8, 7 Sy2) на $z\approx0 - 0.147$
+
+* Для 8 объектов были построены широкополосные рентгеновские (0.2-20 кэВ) спектры по данным ART-XC и eROSITA обсерватории СРГ
+
+* У двух Sy2 и одного Sy1 выявлено внутреннее поглощение $N_{\rm H}\sim10^{23}$ см $^{-2}$ и $N_{\rm H}\sim10^{22}$ см $^{-2}$
+
+* Задачу по отождествлению новых АЯГ из обзора СРГ/ART-XC можно эффективно решать с помощью оптических телескопов 1.5-м класса. 
+
+
+
+
+
+
+
+
+
+
+
+
+
 

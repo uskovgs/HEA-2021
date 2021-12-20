@@ -97,6 +97,7 @@ a:active {
   float: right;
   width: 47%;
 }
+
 .pull-right ~ * {
   clear: both;
 }
@@ -135,9 +136,10 @@ thead, tfoot, tr:nth-child(even) { background: #eee }
   color: white;
 }
 
+
 .title-slide h1 {
   color: #FFFFFF;
-  padding-top: 250px;
+  padding-top: 150px;
   font-size: 45px;
   text-align: left;
   padding-bottom: 18px;
